@@ -4,8 +4,11 @@
 The "Block non-latin char videos" script is designed to prevent videos with titles or channel names containing a significant amount of non-latin characters from being processed or displayed. Non-latin characters include any characters outside the range of Latin script, such as special symbols, emojis, or characters from non-Latin scripts like Arabic, Chinese, Cyrillic, etc.
 
 ## Usage
-
 The script takes two parameters: video and objectType, and it will return a boolean value indicating whether the video should be blocked or not.
+This is for [uBlock](https://github.com/gorhill/uBlock) a popular ad blocker for various browsers.
+
+Easy install if you have no advanced scripts yet; Just replace the default script with this script.
+Refer to the current uBlock documentation on details how to install an extended filter script.
 
 ### Javascript
 ``javascript
