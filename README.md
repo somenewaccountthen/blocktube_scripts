@@ -26,7 +26,8 @@ Here, nonLatinCharactersCount represents the number of non-latin characters in t
 ## Implementation Details
 
 The script uses a regular expression (unicodeRegExp) to identify non-latin characters in the input strings. The regular expression /[\u0080-\uFFFF]/g matches all characters in the Unicode range from \u0080 to \uFFFF, which includes non-latin characters. It then replaces these non-latin characters with an empty string to get the title and channel name without any non-latin characters.
-Optimization for Speed
+
+##Optimization for Speed
 
 To optimize the script for speed, we calculate the length of the title and channel name without non-latin characters once and reuse it in the condition checks. This avoids redundant processing of the same regular expression for both checks.
 
