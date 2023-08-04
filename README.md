@@ -10,24 +10,12 @@ This is for [uBlock](https://github.com/gorhill/uBlock) a popular ad blocker for
 Easy install if you have no advanced scripts yet; Just replace the default script with this script.
 Refer to the current uBlock documentation on details how to install an extended filter script.
 
-``
-(video, objectType) => {
-    // Script code here
-}``
-
-## Blocking Criteria
-
-The script blocks videos if their title or channel name contains more than 10% non-latin characters. The calculation of the percentage is done using the following formula:
-
-``(nonLatinCharactersCount / totalCharactersCount) > 0.1``
-
-Here, nonLatinCharactersCount represents the number of non-latin characters in the title or channel name, and totalCharactersCount represents the total number of characters in the respective title or channel name.
 
 ## Implementation Details
 
 The script uses a regular expression (unicodeRegExp) to identify non-latin characters in the input strings. The regular expression /[\u0080-\uFFFF]/g matches all characters in the Unicode range from \u0080 to \uFFFF, which includes non-latin characters. It then replaces these non-latin characters with an empty string to get the title and channel name without any non-latin characters.
 
-##Optimization for Speed
+## Optimization for Speed
 
 To optimize the script for speed, we calculate the length of the title and channel name without non-latin characters once and reuse it in the condition checks. This avoids redundant processing of the same regular expression for both checks.
 
