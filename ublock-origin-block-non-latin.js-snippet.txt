@@ -1,0 +1,13 @@
+(video, objectType) => {
+    const unicodeRegExp = /[\u0080-\uFFFF]/g;
+
+    if (!video) return false;
+
+    const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
+    const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
+
+    return (
+        (video.title && (video.title.length / titleWithoutUnicode.length) > 1.1) ||
+        (video.channelName && (video.channelName.length / channelNameWithoutUnicode.length) > 1.1)
+    );
+}
