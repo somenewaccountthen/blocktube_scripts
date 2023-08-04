@@ -10,8 +10,7 @@ This is for [uBlock](https://github.com/gorhill/uBlock) a popular ad blocker for
 Easy install if you have no advanced scripts yet; Just replace the default script with this script.
 Refer to the current uBlock documentation on details how to install an extended filter script.
 
-### Javascript
-``javascript
+``
 (video, objectType) => {
     // Script code here
 }``
@@ -19,8 +18,6 @@ Refer to the current uBlock documentation on details how to install an extended 
 ## Blocking Criteria
 
 The script blocks videos if their title or channel name contains more than 10% non-latin characters. The calculation of the percentage is done using the following formula:
-
-### Javascript
 
 ``(nonLatinCharactersCount / totalCharactersCount) > 0.1``
 
@@ -44,8 +41,6 @@ Here are some examples of how the script works:
 
 ## Example 1 - Block Video:
 
-### Javascript
-
 ```javascript
 const video = {
     title: "My Video Title 🎥",
@@ -58,8 +53,6 @@ console.log(blockNonLatinCharVideos(video)); // Output: true
 In this example, both the title and channel name contain emojis, which are non-latin characters. As the percentage of non-latin characters in both the title and channel name exceeds 10% (more than 1.1), the script returns true, and the video should be blocked.
 
 ## Example 2 - Allow Video:
-
-### Javascript
 
 ```javascript
 const video = {
