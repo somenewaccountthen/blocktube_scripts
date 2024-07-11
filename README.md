@@ -1,59 +1,38 @@
-# ublockscripts
-
 ## Description
-The "Block non-latin char videos" script ublock-origin-block-non-latin.js is designed to prevent videos with titles or channel names containing a significant amount of non-latin characters from being processed or displayed. Non-latin characters include any characters outside the range of Latin script, such as special symbols, emojis, or characters from non-Latin scripts like Arabic, Chinese, Cyrillic, etc.
+This is a script to be used with blocktube.
+You can put it under 'Filter options' / 'Advanced Blocking' inside blocktube.
 
 ## Usage
-The script takes two parameters: video and objectType, and it will return a boolean value indicating whether the video should be blocked or not.
-This is for [uBlock](https://github.com/gorhill/uBlock) a popular ad blocker for various browsers.
-
-Easy install if you have no advanced scripts yet; Just replace the default script with this script.
-Refer to the current uBlock documentation on details how to install an extended filter script.
+Hide by setting a constant to true, show it by setting it to false. This is case sensitive so use lowercase.
+Example: To hide videos from today set the 'const hideToday = true'. 
+- const hideToday  = true
 
 
-## Implementation Details
+## Toggles for video age
+### Hide videos with ages that contain 'x hour', 'x hours' and '1 day'
+- const hideToday  = false
+### Hide videos with ages that contain 'x days'
+- const hideDays   = false
+### Hide videos with ages that contain 'x week'
+- const hideWeek   = true
+### Hide videos with ages that contain 'x weeks'
+- const hideWeeks  = true
+### Hide videos with ages that contain 'x month'
+- const hideMonth  = true
+### Hide videos with ages that contain 'x months'
+- const hideMonths = true
+### Hide videos with ages that contain 'x year'
+- const hideYear   = true
+### Hide videos with ages that contain 'x years'
+- const hideYears  = true
 
-The script uses a regular expression (unicodeRegExp) to identify non-latin characters in the input strings. The regular expression /[\u0080-\uFFFF]/g matches all characters in the Unicode range from \u0080 to \uFFFF, which includes non-latin characters. It then replaces these non-latin characters with an empty string to get the title and channel name without any non-latin characters.
 
-## Optimization for Speed
+## Block narcicssists 
+hideNarcissists blocks any video with a title starting with "I " 
+- const hideNarcissists  = true
 
-To optimize the script for speed, we calculate the length of the title and channel name without non-latin characters once and reuse it in the condition checks. This avoids redundant processing of the same regular expression for both checks.
 
-## How to Interpret the Output
+## Block exotic char sets
+hideExoticCharChannelsAndTitles blocks videos with titles or channel names containing a significant amount of non-latin characters from being processed or displayed. Non-latin characters include any characters outside the range of Latin script, such as special symbols, emojis, or characters from non-Latin scripts like Arabic, Chinese, Cyrillic, Thai, etc.
 
-  - If the script returns true, it means the video should be blocked because its title or channel name contains more than 10% non-latin characters.
-  - If the script returns false, it means the video is allowed, and its title or channel name does not exceed the 10% threshold for non-latin characters.
-
-# Examples
-
-Here are some examples of how the script works:
-
-## Example 1 - Block Video:
-
-```javascript
-const video = {
-    title: "My Video Title 🎥",
-    channelName: "Cool Channel 🌟"
-};
-
-console.log(blockNonLatinCharVideos(video)); // Output: true
-```
-
-In this example, both the title and channel name contain emojis, which are non-latin characters. As the percentage of non-latin characters in both the title and channel name exceeds 10% (more than 1.1), the script returns true, and the video should be blocked.
-
-## Example 2 - Allow Video:
-
-```javascript
-const video = {
-    title: "Summer Vacation Vlog",
-    channelName: "Travel Enthusiast"
-};
-
-console.log(blockNonLatinCharVideos(video)); // Output: false
-```
-
-In this example, both the title and channel name only contain Latin characters, and there are no non-latin characters. As the percentage of non-latin characters in both the title and channel name is 0% (less than 1.1), the script returns false, and the video is allowed.
-
-## Important Note
-
-Please ensure that you provide valid input values for video.title and video.channelName when using the script to get accurate and reliable results. If the input is invalid or missing, the script will return false by default, indicating that the video should be blocked to avoid potential issues with incomplete data.
+- const hideExoticCharChannelsAndTitles = true
