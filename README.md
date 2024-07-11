@@ -1,6 +1,7 @@
 ## Description
 This is a script to be used with blocktube.
 You can put it under 'Filter options' / 'Advanced Blocking' inside blocktube.
+![blocktubeadvancedfilters](https://github.com/user-attachments/assets/c9b745bc-a07c-44f4-9997-f468fc8032ba)
 
 ## Usage
 Hide by setting a constant to true, show it by setting it to false. This is case sensitive so use lowercase.
