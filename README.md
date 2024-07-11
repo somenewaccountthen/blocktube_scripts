@@ -1,6 +1,6 @@
 ## Description
-This is a script to be used with blocktube.
-You can put it under 'Filter options' / 'Advanced Blocking' inside blocktube.
+This is a script to be used with blocktube. It can filter based on video age, narcissism and exotic charset for channel and video title.
+You can put the script in 'Filter options' / 'Advanced Blocking' inside blocktube.
 ![blocktubeadvancedfilters](https://github.com/user-attachments/assets/c9b745bc-a07c-44f4-9997-f468fc8032ba)
 
 ## Usage
