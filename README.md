@@ -6,8 +6,10 @@ You can put the script in 'Filter options' / 'Advanced Blocking' inside blocktub
 ## Usage
 Hide by setting a constant to true, show it by setting it to false. This is case sensitive so use lowercase.
 Example: To hide videos from today set the 'const hideToday = true'. 
-- const hideToday  = true
 
+const hideToday  = true
+
+This will hide all videos with an age string containing the text 'hour' and '1 day'.
 
 ## Block/Hide narcicssists 
 - hideNarcissists: Hides any video with a title starting with "I " 
