@@ -8,6 +8,17 @@ Example: To hide videos from today set the 'const hideToday = true'.
 - const hideToday  = true
 
 
+## Block narcicssists 
+hideNarcissists blocks any video with a title starting with "I " 
+- const hideNarcissists  = true
+
+
+## Block exotic char sets
+hideExoticCharChannelsAndTitles blocks videos with titles or channel names containing a significant amount of non-latin characters from being processed or displayed. Non-latin characters include any characters outside the range of Latin script, such as special symbols, emojis, or characters from non-Latin scripts like Arabic, Chinese, Cyrillic, Thai, etc.
+
+- const hideExoticCharChannelsAndTitles = true
+
+
 ## Toggles for video age
 ### Hide videos with ages that contain 'x hour', 'x hours' and '1 day'
 - const hideToday  = false
@@ -25,14 +36,3 @@ Example: To hide videos from today set the 'const hideToday = true'.
 - const hideYear   = true
 ### Hide videos with ages that contain 'x years'
 - const hideYears  = true
-
-
-## Block narcicssists 
-hideNarcissists blocks any video with a title starting with "I " 
-- const hideNarcissists  = true
-
-
-## Block exotic char sets
-hideExoticCharChannelsAndTitles blocks videos with titles or channel names containing a significant amount of non-latin characters from being processed or displayed. Non-latin characters include any characters outside the range of Latin script, such as special symbols, emojis, or characters from non-Latin scripts like Arabic, Chinese, Cyrillic, Thai, etc.
-
-- const hideExoticCharChannelsAndTitles = true
