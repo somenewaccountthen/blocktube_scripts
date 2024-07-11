@@ -12,7 +12,7 @@ const hideToday  = true
 This will hide all videos with an age string containing the text 'hour' and '1 day'.
 
 ## Block/Hide narcicssists 
-- hideNarcissists: Hides any video with a title starting with "I " 
+- hideNarcissists: Hides any video with a title starting with "I " or "i ". 
 
 
 ## Block/Hide exotic char sets
