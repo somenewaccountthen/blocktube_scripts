@@ -20,11 +20,11 @@ This will hide all videos with an age string containing the text 'hour' and '1 d
 
 
 ## Block/Hide videos based on age
-The age of a video is a text string. Some examples are '1 week', '4 weeks', '2 months', 14 years'. We refer this as the 'age text'.
+The age of a video is a text string. Some examples are '1 week', '4 weeks', '2 months', '14 years'. I refer this as the 'age text'.
 - hideToday: Hide videos with an age text that contains 'hour' or 'hours' or '1 day'.
 - hideDays: Hide videos with an age text that contains 'days ago'.
-- hideWeek: Hide videos with an age text that contains 'week ago'.
-- hideWeeks: Hide videos with an age text that contains 'weeks ago'.
+- hideek: Hide videos with an age text that contains 'week ago'.
+- hideeks: Hide videos with an age text that contains 'weeks ago'.
 - hideMonth: Hide videos with an age text that contains 'month ago'.
 - hideMonths: Hide videos with an age text that contains 'months ago'.
 - hideYear: Hide videos with an age text that contains 'year ago'.
