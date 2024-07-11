@@ -20,6 +20,7 @@
     // Block exotic char sets (thai , indian , etc)
     const unicodeRegExp = /[\u0080-\uFFFF]/g; // Do not touch
     const hideExoticCharChannelsAndTitles = true
+    const maxExoticChars = 1.1
     
   	// block video based on age; Return true to block a video.
     if (video.publishTimeText)
@@ -52,8 +53,8 @@
         const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
         const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
         return (
-            	(video.title && titleWithoutUnicode && (video.title.length / titleWithoutUnicode.length) > 1.1) ||
-            	(video.channelName && channelNameWithoutUnicode && (video.channelName.length / channelNameWithoutUnicode.length) > 1.1)
+            	(video.title && titleWithoutUnicode && (video.title.length / titleWithoutUnicode.length) > maxExoticChars) ||
+            	(video.channelName && channelNameWithoutUnicode && (video.channelName.length / channelNameWithoutUnicode.length) > maxExoticChars)
 		);
       }
 }
