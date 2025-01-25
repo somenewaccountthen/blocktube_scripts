@@ -29,3 +29,6 @@ The age of a video is a text string. Some examples are '1 week', '4 weeks', '2 m
 - hideMonths: Hide videos with an age text that contains 'months ago'.
 - hideYear: Hide videos with an age text that contains 'year ago'.
 - hideYears: Hide videos with an age text that contains 'years ago'.
+
+## Block/Hide videos based on annoying one minute ago title
+- hideOneminuteAgo: Hide video with the title start '1 minute ago' and 'one minute ago'
