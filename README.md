@@ -1,5 +1,5 @@
 ## Description
-This is a script to be used with blocktube. It can filter based on video age, narcissism and exotic charset for channel and video title.
+This is a script to be used with blocktube. It can filter based on video age, narcissism, exotic charset for channel and video title and 'one minute ago' style video title.
 You can put the script in 'Filter options' / 'Advanced Blocking' inside [blocktube](https://github.com/amitbl/blocktube/wiki).
 ![blocktubeadvancedfilters](https://github.com/user-attachments/assets/c9b745bc-a07c-44f4-9997-f468fc8032ba)
 
