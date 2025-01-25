@@ -1,60 +1,126 @@
 (video, objectType) => {
 
-	// No video, we are done.
-	if (!video) 
-		return false;
-  
-	// toggles for video age
-	const hideToday  = false
-	const hideDays   = false
-	const hideWeek   = true
-	const hideWeeks  = true
-	const hideMonth  = true
-	const hideMonths = true
-	const hideYear   = true
-	const hideYears  = true
-   
-	// Block narcicssists 
-	const hideNarcissists  = true
-	
-	// Block exotic char sets (thai , indian , etc)
-	const unicodeRegExp = /[\u0080-\uFFFF]/g; // Do not touch
-	const hideExoticCharChannelsAndTitles = true
-	const maxExoticChars = 1.1
-	
-	// block video based on age; Return true to block a video.
-	if (video.publishTimeText)
-	{
-		// one Day(s)
-		if (hideToday  && video.publishTimeText.toLowerCase().includes('hour')       )	return true;
-		if (hideToday  && video.publishTimeText.toLowerCase().includes('1 day')      )	return true;
-		// Multiple days
-		if (hideDays   && video.publishTimeText.toLowerCase().includes('days ago')   ) 	return true;
-		// Week(s)
-		if (hideWeek   && video.publishTimeText.toLowerCase().includes('week ago')   ) 	return true;
-		if (hideWeeks  && video.publishTimeText.toLowerCase().includes('weeks ago')  ) 	return true;
-		// Month(s)
-		if (hideMonth  && video.publishTimeText.toLowerCase().includes('month ago')  ) 	return true;        
-		if (hideMonths && video.publishTimeText.toLowerCase().includes('months ago') ) 	return true;
-		// Year(s)
-		if (hideYear   && video.publishTimeText.toLowerCase().includes('year ago')   ) 	return true;
-		if (hideYears  && video.publishTimeText.toLowerCase().includes('years ago')  ) 	return true;
-	}
-	
-	// Video title starting with "i " are all 
-	if (hideNarcissists)
-	{
-		if (video.title && (video.title.startsWith("I ") || video.title.startsWith("i "))) return true;
-	}
-	
-	// Filter Thai, INdian etc channels based on chars used
-	if (hideExoticCharChannelsAndTitles)
-	{
-		const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
-		const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
-		return (
-			(video.title && titleWithoutUnicode && (video.title.length / titleWithoutUnicode.length) > maxExoticChars) ||
-			(video.channelName && channelNameWithoutUnicode && (video.channelName.length / channelNameWithoutUnicode.length) > maxExoticChars)
-			);
-	}
+  // No video, we are done.
+  if (!video)
+    return false;
+
+  // toggles for video age
+  const hideToday = false
+  const hideDays = false
+  const hideWeek = true
+  const hideWeeks = true
+  const hideMonth = true
+  const hideMonths = true
+  const hideYear = true
+  const hideYears = true
+
+  // Block narcicssists 
+  const hideNarcissists = true
+
+  // Block exotic char sets (thai , indian , etc)
+  const unicodeRegExp = /[\u0080-\uFFFF]/g; // Do not touch
+  const hideExoticCharChannelsAndTitles = true
+  const maxExoticChars = 1.1
+
+  // block video based on age; Return true to block a video.
+  if (video.publishTimeText) {
+    // one Day(s)
+    if (hideToday && video.publishTimeText.toLowerCase().includes('hour')) return true;
+    if (hideToday && video.publishTimeText.toLowerCase().includes('1 day')) return true;
+    // Multiple days
+    if (hideDays && video.publishTimeText.toLowerCase().includes('days ago')) return true;
+    // Week(s)
+    if (hideWeek && video.publishTimeText.toLowerCase().includes('week ago')) return true;
+    if (hideWeeks && video.publishTimeText.toLowerCase().includes('weeks ago')) return true;
+    // Month(s)
+    if (hideMonth && video.publishTimeText.toLowerCase().includes('month ago')) return true;
+    if (hideMonths && video.publishTimeText.toLowerCase().includes('months ago')) return true;
+    // Year(s)
+    if (hideYear && video.publishTimeText.toLowerCase().includes('year ago')) return true;
+    if (hideYears && video.publishTimeText.toLowerCase().includes('years ago')) return true;
+  }
+
+  // Video title starting with "i " are all 
+  if (hideNarcissists) {
+    if (video.title && (video.title.startsWith("I ") || video.title.startsWith("i "))) return true;
+  }
+
+  // Filter Thai, INdian etc channels based on chars used
+  if (hideExoticCharChannelsAndTitles) {
+    const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
+    const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
+    return (
+      (video.title && titleWithoutUnicode && (video.title.length / titleWithoutUnicode.length) > maxExoticChars) ||
+      (video.channelName && channelNameWithoutUnicode && (video.channelName.length / channelNameWithoutUnicode.length) > maxExoticChars)
+    );
+  }
+}
+
+(video, objectType) => {
+
+  // No video, we are done.
+  if (!video)
+    return false;
+
+  // toggles for video age
+  const hideToday = false
+  const hideDays = true
+  const hideWeek = true
+  const hideWeeks = true
+  const hideMonth = true
+  const hideMonths = true
+  const hideYear = true
+  const hideYears = true
+
+  // Block narcicssists 
+  const hideNarcissists = true
+
+  // Block exotic char sets (thai , indian , etc)
+  const unicodeRegExp = /[\u0080-\uFFFF]/g; // Do not touch
+  const hideExoticCharChannelsAndTitles = true
+  const maxExoticChars = 1.1
+
+  // Block one minute ago
+  const hideOneminuteAgo = true
+
+  // block video based on age; Return true to block a video.
+  if (video.publishTimeText) {
+    // one Day(s)
+    if (hideToday && video.publishTimeText.toLowerCase().includes('hour')) return true;
+    if (hideToday && video.publishTimeText.toLowerCase().includes('1 day')) return true;
+    // Multiple days
+    if (hideDays && video.publishTimeText.toLowerCase().includes('days ago')) return true;
+    // Week(s)
+    if (hideWeek && video.publishTimeText.toLowerCase().includes('week ago')) return true;
+    if (hideWeeks && video.publishTimeText.toLowerCase().includes('weeks ago')) return true;
+    // Month(s)
+    if (hideMonth && video.publishTimeText.toLowerCase().includes('month ago')) return true;
+    if (hideMonths && video.publishTimeText.toLowerCase().includes('months ago')) return true;
+    // Year(s)
+    if (hideYear && video.publishTimeText.toLowerCase().includes('year ago')) return true;
+    if (hideYears && video.publishTimeText.toLowerCase().includes('years ago')) return true;
+  }
+
+  // Video title starting with "i " are all 
+  if (hideNarcissists) {
+    if (video.title && (video.title.startsWith("I ") || video.title.startsWith("i "))) return true;
+  }
+
+  if (hideOneminuteAgo) {
+    if (video.title && (video.title.toLowerCase().startsWith("one minute ago") || video.title.toLowerCase().startsWith("1 minute ago"))) {
+      return true;
+    }
+  }
+
+  // Filter Thai, INdian etc channels based on chars used
+  if (hideExoticCharChannelsAndTitles) {
+    const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
+    const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
+    return (
+      (video.title && titleWithoutUnicode && (video.title.length / titleWithoutUnicode.length) > maxExoticChars) ||
+      (video.channelName && channelNameWithoutUnicode && (video.channelName.length / channelNameWithoutUnicode.length) > maxExoticChars)
+    );
+  }
+
+
 }
