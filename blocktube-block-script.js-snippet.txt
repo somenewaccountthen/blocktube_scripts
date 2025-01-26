@@ -43,12 +43,12 @@
     if (hideYears && video.publishTimeText.toLowerCase().includes('years ago')) return true;
   }
 
-  // Video title starting with "i " are all 
+  // Block video title starting with "i ".
   if (hideNarcissists) {
     if (video.title && (video.title.startsWith("I ") || video.title.startsWith("i "))) return true;
   }
 
-  // Filter Thai, INdian etc channels based on chars used
+  // Block Thai, INdian etc channels based on chars used.
   if (hideExoticCharChannelsAndTitles) {
     const titleWithoutUnicode = video.title ? video.title.replace(unicodeRegExp, '') : '';
     const channelNameWithoutUnicode = video.channelName ? video.channelName.replace(unicodeRegExp, '') : '';
@@ -58,6 +58,7 @@
     );
   }
 
+  // Block videos with a title starting with 'one minute ago' or '1 minute ago'.
   if (hideOneminuteAgo) {
     if (video.title && (video.title.toLowerCase().startsWith("one minute ago") || video.title.toLowerCase().startsWith("1 minute ago"))) {
       return true;
