@@ -51,3 +51,7 @@ Open a Youtube page:
 - 2: Make sure 'info' is enabled.
 - Refresh the page.
 ![image](https://github.com/user-attachments/assets/e5adc1d9-8a10-46b0-9bc6-f76bba345f28)
+
+
+# Code
+Code was kept simple so people can change it without requireing a degree in computer science. Good luck! 
