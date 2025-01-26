@@ -41,11 +41,9 @@ The age of a video is a text string. Some examples are '1 week', '4 weeks', '2 m
 - hideOneminuteAgo: Hide video with the title start '1 minute ago' and 'one minute ago'
 
 # How to see the info log in your browser when using the script with the logging.
-Make sure you are using
+Make sure you are using one of these two scripts:
 - blocktube-block-script-with-logging-always-on.js-snippet.txt
 - blocktube-block-script-with-logging.js-snippet.txt with const logInfo set to true".
-- blocktube-block-script.js-snippet.txt has no logging.
-
 
 Open a Youtube page:
 - Press F12.
