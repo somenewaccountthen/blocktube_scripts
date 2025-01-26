@@ -54,4 +54,4 @@ Open a Youtube page:
 
 
 # Code
-Code was kept simple so people can change it without requireing a degree in computer science. Good luck! 
+Code was kept simple so people can change it without requiring a degree in computer science. Good luck! 
